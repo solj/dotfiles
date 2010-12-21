@@ -1,4 +1,5 @@
 *
-!.gitignore
 !.bash*
 !.bash/*
+!.gitignore
+!.toprc
