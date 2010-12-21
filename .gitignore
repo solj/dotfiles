@@ -3,3 +3,4 @@
 !.bash/*
 !.gitignore
 !.toprc
+!.vimrc
