@@ -2,6 +2,7 @@
 !.bash*
 !.bash/*
 !.gitignore
+!.inputrc
 !.tmux.conf
 !.toprc
 !.vimrc
