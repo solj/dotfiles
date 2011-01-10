@@ -1,5 +1,6 @@
 *
-!.bash*
+!.bashrc
+!.bash_profile
 !.bash/*
 !.gitignore
 !.inputrc
