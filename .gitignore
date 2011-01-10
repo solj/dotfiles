@@ -3,6 +3,9 @@
 !.bash/*
 !.gitignore
 !.inputrc
+!.muttrc
+!.mutt
+!.mutt/*.muttrc
 !.tmux.conf
 !.toprc
 !.vimrc

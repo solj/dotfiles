@@ -1,0 +1,72 @@
+#############################################################################
+# ~/.muttrc: Customized muttrc                                              #
+# Copyright (C) 2010  Sol Jerome                                            #
+#                                                                           #
+# This is free software; you can redistribute it and/or modify it under     #
+# the terms of the GNU General Public License as published by the Free      #
+# Software Foundation; either version 2 of the License, or (at your option) #
+# any later version.                                                        #
+#                                                                           #
+# This is distributed in the hope that it will be useful, but WITHOUT       #
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or     #
+# FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License     #
+# for more details.                                                         #
+#                                                                           #
+# You should have received a copy of the GNU General Public License along   #
+# with this program; if not, write to the Free Software Foundation, Inc.,   #
+# 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.               #
+#############################################################################
+
+# Aliases give you a basic addressbook. Use "A" to add a message's sender to
+# the aliases file, so you don't have to remember their address.
+# File to use for saving new aliases
+set alias_file=~/.mutt/aliases
+set realname="Sol Jerome"
+set signature="~/.signature"	# my own signature
+set use_from="yes"
+set envelope_from="yes"
+set print=ask-yes		# ask me to print
+set delete=ask-yes		# ask for confirmation when deleting messages?
+set include=yes			# quote message, when replying
+set indent_str="> "             # change this and I'll kill you!  ;-)
+alternative_order text/plain text/html text   # I like plaintext more than html
+set sort_aux=date-received	# Sort threads by date received.
+set attribution="* %{%b %d, %Y}, at %{%H:%M:%S %p}, %n <%a> wrote:"
+set edit_headers		# put headers in editor when composing messages
+set nomark_old			# Don't mark unread new msgs as old.
+set record=""
+set mask="!^\\.[^.]"
+set copy			# always keep a copy of my mails
+set pager_context=3
+set pager_stop			# Don't jump to next message at end of message
+set nostrict_threads		# fuzzy threading
+set fcc_clear			# Keep fcc's clear of signatues and encryption
+set print_command="a2ps -1gEmail --borders=no --strip=3"
+set tilde			# Internal Pager: ~~~~ at end of message?
+set ispell="/usr/bin/aspell --mode=email check"
+set header_cache="~/.mutt/hcache/"
+set message_cachedir="~/.mutt/msgcache/"
+set certificate_file="~/.mutt/certs"
+set hostname=minisol
+set beep			# beep on certain user errors and other errors
+set beep_new			# beep on new mail
+set user_agent			# Create User-Agent: Mutt/<Version> header.
+
+set mailcap_path=~/.mailcap:/etc/mailcap
+
+set autoedit           # start editor without asking for to, subject,...
+set fast_reply         # do not ask for to, subject,... when replying.
+set check_new          # search for new messages in maildir/MH folders.
+folder-hook .    set 'sort=threads' # specifies how to sort messages in the index menu
+
+## ==============================================
+## Bindings for editing and reloading the .muttrc
+## ==============================================
+macro generic   ,vu   ":source ~/.muttrc\r"
+
+source ~/.mutt/account
+source ~/.mutt/aliases
+source ~/.mutt/auto_views.muttrc
+source ~/.mutt/bindings.muttrc
+source ~/.mutt/colors.muttrc
+source ~/.mutt/gpgrc

@@ -1,0 +1,88 @@
+#############################################################################
+# ~/.mutt/colors: Customized mutt colors                                    #
+# Copyright (C) 2010  Sol Jerome                                            #
+#                                                                           #
+# This is free software; you can redistribute it and/or modify it under     #
+# the terms of the GNU General Public License as published by the Free      #
+# Software Foundation; either version 2 of the License, or (at your option) #
+# any later version.                                                        #
+#                                                                           #
+# This is distributed in the hope that it will be useful, but WITHOUT       #
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or     #
+# FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License     #
+# for more details.                                                         #
+#                                                                           #
+# You should have received a copy of the GNU General Public License along   #
+# with this program; if not, write to the Free Software Foundation, Inc.,   #
+# 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.               #
+#############################################################################
+
+##
+ # mutt colors
+##
+
+color attachment white magenta
+color error brightwhite red   # errors yell at you in red
+color hdrdefault brightred black   # headers
+color indicator white blue # currently selected message
+color markers brightcyan black  # the + for wrapped pager lines
+color message brightcyan black  # informational messages, not mail
+color normal white black    # plain text
+color quoted green black  # quoted text
+color search brightgreen black # hilite search patterns in the pager
+color signature red black    # signature (after "-- ") is red
+color status white blue # status bar is yellow *on blue*
+color tilde blue black  # ~'s after message body
+color tree red black    # thread tree in index menu is magenta
+color signature brightred black
+color underline yellow black
+color header brightcyan black ^(From|Subject): # Important headers
+color body magenta black "(ftp|http)://[^ ]+"  # picks up URLs
+color body magenta black [-a-z_0-9.]+@[-a-z_0-9.]+
+
+#  Coloring quoted text - coloring the first 7 levels:
+color quoted    cyan black
+color quoted1   yellow black
+color quoted2   red black
+color quoted3   green black
+color quoted4   cyan black
+color quoted5   yellow black
+color quoted6   red black
+color quoted7   green black
+
+#  Colorize smileys:  :-)  ;-)  :-/  :-(
+color body  yellow black "[;:]-[)/(|]"
+color body  yellow black "[;:][)/(|]"
+color body  brightgreen black "[[:alpha:]]\+://[^ ]*"
+
+color index brightyellow black ~N      # New
+color index yellow black ~O              # Old
+color index magenta black ~F
+color index blue black ~T
+#scoring
+#color index brightwhite red "~d>3d"
+color index brightgreen black "~n 10-20"
+color index brightyellow black "~n 21-100"
+color index cyan black "~n 7-9"
+color index brightred   black "~F"
+color index blue black ~D
+#color index black red ~D
+
+color body cyan        default       "^[> ]*diff .+"
+color body magenta     default       "^[> ]*@@ .+"
+color body magenta     default       "^[> ]*Binary files .+ differ"
+color body green       default       "^[> ]*\\+.*"
+color body red         default       "^[> ]*-.*"
+
+color body white       default       "^[> ]*GIT changes to .* by"
+color body blue        default       "[0-9]+ files? changed"
+color body green       default       "[0-9]+ insertions?\\(\\+\\)"
+color body red         default       "[0-9]+ deletions?\\(-\\)"
+color body white       default       "^[> ]*New commits:"
+color body blue        default       "(cherry picked from )?commit [0-9a-f]{40}"
+color body cyan        default       "^[> ]*Author: [^<]+[^ <]"
+color body cyan        brightdefault "^[> ]*Commit: [^<]+[^ <]"
+color body red         brightdefault "^[> ]*deleted file mode [0-9]{6}"
+color body green       brightdefault "^[> ]*new file mode [0-9]{6}"
+color body brightblack default       "^[> ]*index [0-9a-f]{7}\\.\\.[0-9a-f]{7}([0-9]{6})?"
+# vim: ft=muttrc:
