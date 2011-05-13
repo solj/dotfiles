@@ -25,7 +25,6 @@ alias cd='pushd'
 alias bd='popd'
 alias cdh='cd ~'
 alias grep='grep --color=auto'
-alias work='autossh -M 0 -XR 5555:localhost:22 layer9.ices.utexas.edu'
 alias ls='ls --color=auto'
 alias ldapvim='ldapvi -Y GSSAPI'
 if [ ! $TMUX ]; then
