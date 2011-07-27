@@ -37,6 +37,4 @@ fi
 if [ "$TERM" != "dumb" ]; then
     alias ll='ls -lvF --color'
     alias lss='ls -AlvF --color'
-    #alias dir='ls --color=auto --format=vertical'
-    #alias vdir='ls --color=auto --format=long'
 fi
