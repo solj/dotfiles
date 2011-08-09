@@ -33,19 +33,12 @@ export DEBEMAIL="sol.jerome@gmail.com"
 export DEBFULLNAME="Sol Jerome"
 
 # gpg stuff
-GPG_TTY=`tty`
+GPG_TTY=$(tty)
 export GPG_TTY
 
-if [ ! -e ${HOME}/.gpg-agent-info ]; then
-	gpg-agent --daemon --enable-ssh-support \
-		--write-env-file "${HOME}/.gpg-agent-info"
+if [ -x /usr/bin/gpg-agent ]; then
+	setup_gpg_agent
 fi
-#if [ -f "${HOME}/.gpg-agent-info" ]; then
-#	. "${HOME}/.gpg-agent-info"
-#	export GPG_AGENT_INFO
-#	export SSH_AUTH_SOCK
-#	export SSH_AGENT_PID
-#fi
 
 PATH=~/bin:/usr/local/bin:${PATH}:/sbin
 export PATH
