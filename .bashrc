@@ -43,7 +43,7 @@ fi
 if [ -f /etc/bashrc ]; then source /etc/bashrc; fi # fedora
 if [ -f /etc/bash/bashrc ]; then source /etc/bash/bashrc; fi # gentoo
 if [ "$DISTRO" != "Ubuntu" ]; then
-	if [ -f /etc/profile ]; then source /etc/profile; fi # gentoo
+	if [ -f /etc/profile ]; then source /etc/profile; fi
 fi
 if [ -d ~/.bash_completion.d ]; then source ~/.bash_completion.d/*; fi # bash completion ftw
 if [ -f ~/.bash/colors.bash ]; then source ~/.bash/colors.bash; fi
