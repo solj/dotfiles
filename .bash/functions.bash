@@ -80,7 +80,8 @@ prompt_func()
 		ONE=$(cat /proc/loadavg | cut -d' ' -f 3)
 	fi
 
-	ONEHUNDRED=$(echo -e "scale=0 \n $ONE/0.01 \nquit \n" | bc)
+	#ONEHUNDRED=$(echo -e "scale=0 \n $ONE/0.01 \nquit \n" | bc)
+	ONEHUNDRED=$(echo $ONE | sed 's/\.//')
 
 	if [ $ONEHUNDRED -gt $THRESHOLD_LOAD ]
 	then
