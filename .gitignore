@@ -2,6 +2,7 @@
 !.bashrc
 !.bash_profile
 !.bash/*
+!.dir_colors
 !.gitignore
 !.inputrc
 !.mailcap

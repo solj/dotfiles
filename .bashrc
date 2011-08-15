@@ -57,16 +57,10 @@ if [ -f /usr/share/mc/mc.gentoo ]; then . /usr/share/mc/mc.gentoo; fi
 
 ##
 # Enable colors for ls, etc.
-# Prefer ~/.dir_colors #64489
+# Prefer ~/.dir_colors
 #
 if [ -x dircolors ]; then
-	if [ -f ~/.dir_colors ]; then
-		eval `dircolors -b ~/.dir_colors`
-	elif [ -f /etc/DIR_COLORS ]; then
-		eval `dircolors -b /etc/DIR_COLORS`
-	else
-		eval `dircolors -b`
-	fi
+	eval `dircolors -b ~/.dir_colors`
 fi
 
 ##
