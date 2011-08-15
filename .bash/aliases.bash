@@ -24,11 +24,15 @@ alias rm='rm -i'
 alias cd='pushd'
 alias bd='popd'
 alias cdh='cd ~'
-alias grep='grep --color=auto'
-alias ls='ls --color=auto'
 alias ldapvim='ldapvi -Y GSSAPI'
 if [ ! $TMUX ]; then
 	alias tmux='tmux attach -d || tmux'
+fi
+if [ `uname` == SunOS ]; then
+	alias grep='/usr/xpg4/bin/grep'
+else
+	alias grep='grep --color=auto'
+	alias ls='ls --color=auto'
 fi
 
 ##

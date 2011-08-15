@@ -73,7 +73,7 @@ prompt_func()
 	COLOR_HIGH="$COLOR_RED"
 
 	if [ `uname` == SunOS ]; then
-		ONE=$(uptime|cut -d' ' -f 15|sed s/,//)
+		ONE=$(uptime|cut -d' ' -f 16|sed s/,//)
 	elif [ `uname` == Darwin ]; then
 		ONE=$(sysctl vm.loadavg|cut -d' ' -f 4|sed s/,//)
 	else
@@ -83,25 +83,28 @@ prompt_func()
 	#ONEHUNDRED=$(echo -e "scale=0 \n $ONE/0.01 \nquit \n" | bc)
 	ONEHUNDRED=$(echo $ONE | sed 's/\.//')
 
-	if [ $ONEHUNDRED -gt $THRESHOLD_LOAD ]
-	then
+	if [ $ONEHUNDRED -gt $THRESHOLD_LOAD ]; then
 		HOST_COLOR=$COLOR_HIGH
 	else
 		HOST_COLOR=$COLOR_LOW
 	fi
+	# check for git
+	have_git_ps1=false
+	if type -t __git_ps1 >/dev/null 2>&1; then
+		have_git_ps1=true
+	fi
 	# set the actual prompt
-	if ${use_color} ; then
+	if ${have_git_ps1}; then
 		PS1="${brks}[${dspt}\w${brks}] (${dspt}$(__git_ps1 "%s")${brks}) [${dspt}pts/\l${brks}]${host}\n\u${brks}@${HOST_COLOR}\h ${brks}"
 	else
-		PS1='\u@\h \w \$ '
+		PS1="${brks}[${dspt}\w${brks}] (${dspt}no git ps1${brks}) [${dspt}pts/\l${brks}]${host}\n\u${brks}@${HOST_COLOR}\h ${brks}"
 	fi
 	##
 	# Makes sure the previous command
 	# completed successfully, otherwise
 	# returns the error number
 	#
-	if test $PREV_RET_VAL -eq 0
-	then
+	if test $PREV_RET_VAL -eq 0; then
 		PS1="${PS1}\$ ${COLOR_NONE}"
 	else
 		PS1="${PS1}${COLOR_RED}[${PREV_RET_VAL}]${brks}\$ ${COLOR_NONE}"
