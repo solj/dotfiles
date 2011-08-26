@@ -10,6 +10,7 @@
 !.muttrc
 !.mutt
 !.mutt/*.muttrc
+!.offlineimaprc
 !.tmux.conf
 !.toprc
 !.vimrc
