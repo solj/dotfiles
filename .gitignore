@@ -5,6 +5,7 @@
 !.bash/*
 !.dir_colors
 !.gitignore
+!.gntrc
 !.inputrc
 !.mailcap
 !.muttrc
