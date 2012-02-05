@@ -2,7 +2,8 @@
 !.Xresources
 !.bashrc
 !.bash_profile
-!.bash/*
+!.bash.d
+!.bash.d/*
 !.dir_colors
 !.gitignore
 !.gntrc

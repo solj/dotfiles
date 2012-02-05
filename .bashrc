@@ -40,20 +40,18 @@ fi
 ##
 # source other necessary stuff
 #
+BASH_DOTDIR=~/.bash.d
+BASH_FILES=(colors my-funcs aliases `hostname` prompt env)
 if [ -f /etc/bashrc ]; then source /etc/bashrc; fi # fedora
 if [ -f /etc/bash/bashrc ]; then source /etc/bash/bashrc; fi # gentoo
 if [ "$DISTRO" != "Ubuntu" ]; then
 	if [ -f /etc/profile ]; then source /etc/profile; fi
 fi
 if [ -d ~/.bash_completion.d ]; then source ~/.bash_completion.d/*; fi # bash completion ftw
-if [ -f ~/.bash/colors.bash ]; then source ~/.bash/colors.bash; fi
-if [ -f ~/.bash/functions.bash ]; then source ~/.bash/functions.bash; fi
-if [ -f ~/.bash/aliases.bash ]; then . ~/.bash/aliases.bash; fi
-if [ -f ~/.bash/`hostname`.bash ]; then source ~/.bash/`hostname`.bash; fi
-if [ -f ~/.bash/prompt.bash ]; then source ~/.bash/prompt.bash; fi
-if [ -f ~/.bash/env.bash ]; then source ~/.bash/env.bash; fi
-# Midnight Commander chdir enhancement
-if [ -f /usr/share/mc/mc.gentoo ]; then . /usr/share/mc/mc.gentoo; fi
+for f in ${BASH_FILES[*]}
+do
+	if [ -f $BASH_DOTDIR/$f.bash ]; then source $BASH_DOTDIR/$f.bash; fi
+done
 
 ##
 # Enable colors for ls, etc.
