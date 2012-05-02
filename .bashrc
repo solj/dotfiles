@@ -28,29 +28,29 @@
 # past this point for scp and rcp, and it's important to refrain from
 # outputting anything in those cases.
 #
-if [[ $- != *i* ]] ; then
-	# Shell is non-interactive.  Be done now!
-	return
+if [[ $- != *i* ]]; then
+    # Shell is non-interactive.  Be done now!
+    return
 fi
 
 if [ -x /usr/bin/lsb_release ]; then
-	DISTRO=`lsb_release -i | cut -d'	' -f2`
+    DISTRO=`lsb_release -i | awk -F\\t '{print $2}'`
+fi
+if [ "$DISTRO" != "Ubuntu" ]; then
+    if [ -f /etc/profile ]; then source /etc/profile; fi
 fi
 
 ##
 # source other necessary stuff
 #
+if [ -f /etc/bashrc ]; then source /etc/bashrc; fi
+if [ -f /etc/bash/bashrc ]; then source /etc/bash/bashrc; fi
+if [ -d ~/.bash_completion.d ]; then source ~/.bash_completion.d/*; fi
+
 BASH_DOTDIR=~/.bash.d
 BASH_FILES=(colors my-funcs aliases `hostname` prompt env)
-if [ -f /etc/bashrc ]; then source /etc/bashrc; fi # fedora
-if [ -f /etc/bash/bashrc ]; then source /etc/bash/bashrc; fi # gentoo
-if [ "$DISTRO" != "Ubuntu" ]; then
-	if [ -f /etc/profile ]; then source /etc/profile; fi
-fi
-if [ -d ~/.bash_completion.d ]; then source ~/.bash_completion.d/*; fi # bash completion ftw
-for f in ${BASH_FILES[*]}
-do
-	if [ -f $BASH_DOTDIR/$f.bash ]; then source $BASH_DOTDIR/$f.bash; fi
+for f in ${BASH_FILES[*]}; do
+    if [ -f $BASH_DOTDIR/$f.bash ]; then source $BASH_DOTDIR/$f.bash; fi
 done
 
 ##
@@ -58,7 +58,7 @@ done
 # Prefer ~/.dir_colors
 #
 if [ -x dircolors ]; then
-	eval `dircolors -b ~/.dir_colors`
+    eval `dircolors -b ~/.dir_colors`
 fi
 
 ##
@@ -67,9 +67,10 @@ fi
 export HISTCONTROL=ignoredups
 
 set noclobber
-##
-# http://caliban.org/bash/
-#
-shopt -s checkwinsize
+
+# shell opts. see bash(1) for details
 shopt -s cdspell
+shopt -s checkwinsize
 shopt -s extglob
+shopt -s no_empty_cmd_completion
+# vim: ts=4 sts=4 shiftwidth=4 expandtab

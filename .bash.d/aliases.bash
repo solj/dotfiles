@@ -42,3 +42,4 @@ if [ "$TERM" != "dumb" ]; then
     alias ll='ls -lvF --color'
     alias lss='ls -AlvF --color'
 fi
+# vim: ts=4 sts=4 shiftwidth=4 expandtab

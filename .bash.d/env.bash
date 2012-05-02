@@ -20,12 +20,11 @@
 ##
 # set my default editor
 #
-if [ -x /usr/bin/vim ]
-then
-	alias vi='/usr/bin/vim'
-	export EDITOR=vim
+if [ -x /usr/bin/vim ]; then
+    alias vi='/usr/bin/vim'
+    export EDITOR=vim
 else
-	export EDITOR=vi
+    export EDITOR=vi
 fi
 
 # these are needed for debuild
@@ -33,12 +32,13 @@ export DEBEMAIL="sol.jerome@gmail.com"
 export DEBFULLNAME="Sol Jerome"
 
 # gpg stuff
-GPG_TTY=$(tty)
-export GPG_TTY
-
-if [ -x /usr/bin/gpg-agent ]; then
-	setup_gpg_agent
-fi
+#GPG_TTY=$(tty)
+#export GPG_TTY
+#
+#if [ -x /usr/bin/gpg-agent ]; then
+#    setup_gpg_agent
+#fi
 
 PATH=~/bin:/usr/local/bin:${PATH}:/sbin
 export PATH
+# vim: ts=4 sts=4 shiftwidth=4 expandtab
