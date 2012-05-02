@@ -17,9 +17,9 @@
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.               #
 #############################################################################
 
-# cd direct<TAB> => cd Directory
-#
+# cd direct<TAB> -> cd Directory
 set completion-ignore-case on
+# only need TAB once when ambiguous
 set show-all-if-ambiguous on
 #
 # The following enables this scenario:
