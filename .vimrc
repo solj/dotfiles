@@ -32,8 +32,8 @@ set background=dark
 set textwidth=72
 
 " include local customizations
-source .vim.d/statusline.vim
-source .vim.d/c.vim
+source ~/.vim.d/statusline.vim
+source ~/.vim.d/c.vim
 
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost *
