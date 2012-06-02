@@ -24,3 +24,9 @@ urxvt.shading: 40
 urxvt.fading: 60
 urxvt.scrollBar: false
 urxvt*font: -xos4-terminus-bold-*-*-*-14-*-*-*-*-*-*-*
+
+! map alt+arrow keys so that they can be passed to the terminal (e.g. vim)
+urxvt.keysym.M-Up: \033[1;3A
+urxvt.keysym.M-Down: \033[1;3B
+urxvt.keysym.M-Right: \033[1;3C
+urxvt.keysym.M-Left: \033[1;3D
