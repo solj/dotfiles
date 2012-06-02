@@ -16,3 +16,5 @@
 !.tmux.conf
 !.toprc
 !.vimrc
+!.vim.d
+!.vim.d/*
