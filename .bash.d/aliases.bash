@@ -20,6 +20,7 @@
 alias bye='exit'
 alias aoeu='setxkbmap us'
 alias asdf='setxkbmap dvorak'
+alias offlineimap='offlineimap -u blinkenlights'
 alias rm='rm -i'
 alias cd='pushd'
 alias bd='popd'
