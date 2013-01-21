@@ -505,3 +505,11 @@ localfolders = ~/mail
 [Repository soljerome-remote]
 type = Gmail
 remoteuser = solj@soljerome.com
+
+[mbnames]
+enabled = yes
+filename = ~/.mutt/muttrc.mailboxes
+header = "mailboxes "
+peritem = "+%(foldername)s"
+sep = " "
+footer = "\n"
