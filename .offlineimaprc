@@ -1,6 +1,6 @@
 #############################################################################
 # ~/.offlineimaprc: Customized .offlineimaprc                               #
-# Copyright (C) 2012  Sol Jerome                                            #
+# Copyright (C) 2013  Sol Jerome                                            #
 #                                                                           #
 # This is free software; you can redistribute it and/or modify it under     #
 # the terms of the GNU General Public License as published by the Free      #
@@ -505,6 +505,8 @@ localfolders = ~/mail
 [Repository soljerome-remote]
 type = Gmail
 remoteuser = solj@soljerome.com
+sslcacertfile = /etc/ssl/certs/Equifax_Secure_CA.pem
+createfolders = False
 
 [mbnames]
 enabled = yes
