@@ -1,6 +1,6 @@
 #############################################################################
 # ~/.bashrc: Customized .bashrc                                             #
-# Copyright (C) 2012  Sol Jerome                                            #
+# Copyright (C) 2013  Sol Jerome                                            #
 #                                                                           #
 # This is free software; you can redistribute it and/or modify it under     #
 # the terms of the GNU General Public License as published by the Free      #
@@ -34,7 +34,7 @@ if [[ $- != *i* ]]; then
 fi
 
 if [ -x /usr/bin/lsb_release ]; then
-    DISTRO=`lsb_release -i | awk -F\\t '{print $2}'`
+    DISTRO=$(lsb_release -i | awk -F\\t '{print $2}')
 fi
 if [ "$DISTRO" != "Ubuntu" ]; then
     if [ -f /etc/profile ]; then source /etc/profile; fi
@@ -48,7 +48,7 @@ if [ -f /etc/bash/bashrc ]; then source /etc/bash/bashrc; fi
 if [ -d ~/.bash_completion.d ]; then source ~/.bash_completion.d/*; fi
 
 BASH_DOTDIR=~/.bash.d
-BASH_FILES=(colors my-funcs aliases `hostname` prompt env)
+BASH_FILES=(colors my-funcs aliases $(hostname) prompt env)
 for f in ${BASH_FILES[*]}; do
     if [ -f $BASH_DOTDIR/$f.bash ]; then source $BASH_DOTDIR/$f.bash; fi
 done
@@ -58,7 +58,7 @@ done
 # Prefer ~/.dir_colors
 #
 if [ -x dircolors ]; then
-    eval `dircolors -b ~/.dir_colors`
+    eval $(dircolors -b ~/.dir_colors)
 fi
 
 ##
