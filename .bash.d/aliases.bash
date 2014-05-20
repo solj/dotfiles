@@ -1,6 +1,6 @@
 #############################################################################
 # ~/.bash/aliases.bash: Custom bash aliases                                 #
-# Copyright (C) 2012  Sol Jerome                                            #
+# Copyright (C) 2014  Sol Jerome                                            #
 #                                                                           #
 # This is free software; you can redistribute it and/or modify it under     #
 # the terms of the GNU General Public License as published by the Free      #
@@ -35,6 +35,7 @@ else
 	alias grep='grep --color=auto'
 	alias ls='ls --color=auto'
 fi
+alias nullssh='ssh -o GlobalKnownHostsFile=/dev/null -o UserKnownHostsFile=/dev/null'
 
 ##
 # ls aliases
