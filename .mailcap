@@ -1,6 +1,6 @@
 #############################################################################
 # ~/.mailcap: Custom mailcap file                                           #
-# Copyright (C) 2012  Sol Jerome                                            #
+# Copyright (C) 2021  Sol Jerome                                            #
 #                                                                           #
 # This is free software; you can redistribute it and/or modify it under     #
 # the terms of the GNU General Public License as published by the Free      #
@@ -22,3 +22,4 @@ application/octet-stream; cat %s; copiousoutput
 text/html; lynx -dump -force_html %s; copiousoutput
 text/plain; cat %s; copiousoutput
 application/pdf; pdftotext %s -; copiousoutput
+application/vnd.openxmlformats-officedocument.wordprocessingml.document; pandoc --from docx --to markdown %s; copiousoutput
